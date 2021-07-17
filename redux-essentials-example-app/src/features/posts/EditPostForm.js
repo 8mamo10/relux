@@ -21,7 +21,7 @@ export const EditPostForm = ({ match }) => {
   const onContentChanged = e => setContent(e.target.value)
   const onSavePostClicked = () => {
     if (title && content) {
-      dispatchEvent(postUpdated({ id: postId, title, content }))
+      dispatch(postUpdated({ id: postId, title, content }))
       history.push(`/posts/${postId}`)
     }
   }
