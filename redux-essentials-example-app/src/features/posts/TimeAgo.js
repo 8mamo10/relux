@@ -1,15 +1,15 @@
-import React from 'react-redux'
-import { parseISO, formatDistanceNow } from 'date-fns'
+import React from 'react'
+import { parseISO, formatDistanceToNow } from 'date-fns'
 
 export const TimeAgo = ({ timestamp }) => {
   let timeAgo = ''
   if (timestamp) {
     const date = parseISO(timestamp)
-    const timePeriod = formatDistanceNow(date)
-    timeAago = `${timePeriod} ago`
+    const timePeriod = formatDistanceToNow(date)
+    timeAgo = `${timePeriod} ago`
   }
   return (
-    <span title={timestmap}>
+    <span title={timestamp}>
       &nbsp; <i>{timeAgo}</i>
     </span>
   )
