@@ -46,6 +46,8 @@ export const PostsList = () => {
     content = orderedPosts.map(post => (
       <PostExcerpt key={post.id} post={post} />
     ))
+  } else if (postStatus === 'failed') {
+    content = <div>{error}</div>
   }
   return (
     <section className="posts-list">
