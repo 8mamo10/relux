@@ -30,11 +30,11 @@ export const PostsList = () => {
   const posts = useSelector(selectAllPosts)
 
   const postStatus = useSelector(state => state.posts.status)
-  const error = useSelector(state => state.posts.error)
+  const error = useSelector((state) => state.posts.error)
 
   useEffect(() => {
     if (postStatus === 'idle') {
-      dispatch(fetchPosts)
+      dispatch(fetchPosts())
     }
   }, [postStatus, dispatch])
 
