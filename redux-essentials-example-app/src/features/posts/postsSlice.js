@@ -29,8 +29,7 @@ const postsSlice = createSlice({
     postAdded: {
       reducer(state, action) {
         state.posts.push(action.payload)
-      }
-      ,
+      },
       prepare(title, content, userId) {
         return {
           payload: {
@@ -77,7 +76,8 @@ const postsSlice = createSlice({
     [fetchPosts.rejected]: (state, action) => {
       state.status = 'failed'
       state.error = action.error.message
-    }, [addNewPost.fulfilled]: (state, action) => {
+    },
+    [addNewPost.fulfilled]: (state, action) => {
       state.posts.push(action.payload)
     }
   }
