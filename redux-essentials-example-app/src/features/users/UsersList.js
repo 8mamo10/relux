@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { selectAllUsers } from './usersSlice'
 
 export const UsersList = () => {
-  const users = useSlector(selectAllUsers)
+  const users = useSelector(selectAllUsers)
 
   const renderedUsers = users.map(user => (
     <li key={users.id}>
