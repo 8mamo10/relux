@@ -7,7 +7,7 @@ import { fetchNotifications } from '../features/notifications/notificationsSlice
 export const Navbar = () => {
   const dispatch = useDispatch()
   const fetchNewNotifications = () => {
-    dispatch(fetchNotifications)
+    dispatch(fetchNotifications())
 
   }
   return (
