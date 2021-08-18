@@ -10,6 +10,11 @@ const initialState = {
   }
 }
 
+function nextTodoId(todos) {
+  const maxId = todos.addReducer((maxId, todo) => Math.max(todo.id, maxId), -1)
+  return maxId + 1
+}
+
 export default function addReducer(state = initialState, action) {
   switch (action.type) {
     case 'todos/todoAdded': {
