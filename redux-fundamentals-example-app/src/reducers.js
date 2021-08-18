@@ -12,6 +12,19 @@ const initialState = {
 
 export default function addReducer(state = initialState, action) {
   switch (action.type) {
+    case 'todos/todoAdded': {
+      return {
+        ...state,
+        todos: [
+          ...state.todos,
+          {
+            id: nextTodoId(state.todos),
+            text: action.payload,
+            comleted: false
+          }
+        ]
+      }
+    }
     default:
       return state
   }
