@@ -29,6 +29,17 @@ export default function addReducer(state = initialState, action) {
           }
         ]
       }
+    },
+    case 'todos/todoToggled': {
+      return {
+        ...state,
+        todos: [
+          ...todo,
+          completed: !todo.completed
+        ]
+
+      }
+
     }
     default:
       return state
