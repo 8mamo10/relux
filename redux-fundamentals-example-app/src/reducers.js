@@ -29,7 +29,7 @@ export default function addReducer(state = initialState, action) {
           }
         ]
       }
-    },
+    }
     case 'todos/todoToggled': {
       return {
         ...state,
@@ -42,6 +42,15 @@ export default function addReducer(state = initialState, action) {
             completed: !todo.completed
           }
         })
+      }
+    }
+    case 'filtered/statusFilterChanged': {
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          status: action.payload
+        }
       }
     }
     default:
