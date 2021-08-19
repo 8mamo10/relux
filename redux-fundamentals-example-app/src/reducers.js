@@ -33,13 +33,16 @@ export default function addReducer(state = initialState, action) {
     case 'todos/todoToggled': {
       return {
         ...state,
-        todos: [
-          ...todo,
-          completed: !todo.completed
-        ]
-
+        todos: state.todos.map(todo => {
+          if (todo.id !== action.payload) {
+            return todo
+          }
+          return {
+            ...todo,
+            completed: !todo.completed
+          }
+        })
       }
-
     }
     default:
       return state
